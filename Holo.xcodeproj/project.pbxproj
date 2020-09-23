@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E05D73D251B75F4004F6C3B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E05D73C251B75F4004F6C3B /* MapViewController.swift */; };
+		8E5078F8251B5DE700DABE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5078F7251B5DE700DABE76 /* AppDelegate.swift */; };
+		8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */; };
+		8E5078FF251B5DE700DABE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5078FD251B5DE700DABE76 /* Main.storyboard */; };
+		8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */; };
+		8E507904251B5DEB00DABE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E507903251B5DEB00DABE76 /* Assets.xcassets */; };
+		8E507907251B5DEB00DABE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */; };
+		FC26ABF4E1F09C1E68A7B33F /* Pods_Holo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7411A52E379CDA0E8B8D79AC /* Pods-Holo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holo.release.xcconfig"; path = "Target Support Files/Pods-Holo/Pods-Holo.release.xcconfig"; sourceTree = "<group>"; };
+		8E05D73C251B75F4004F6C3B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8E5078F4251B5DE700DABE76 /* Holo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E5078F7251B5DE700DABE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8E5078FE251B5DE700DABE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E507901251B5DE700DABE76 /* Holo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Holo.xcdatamodel; sourceTree = "<group>"; };
+		8E507903251B5DEB00DABE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E507906251B5DEB00DABE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E507908251B5DEB00DABE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E622CDBBF63B79E9A9907CE1 /* Pods-Holo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holo.debug.xcconfig"; path = "Target Support Files/Pods-Holo/Pods-Holo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E5078F1251B5DE700DABE76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC26ABF4E1F09C1E68A7B33F /* Pods_Holo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E5078EB251B5DE700DABE76 = {
+			isa = PBXGroup;
+			children = (
+				8E5078F6251B5DE700DABE76 /* Holo */,
+				8E5078F5251B5DE700DABE76 /* Products */,
+				93A377E6DBC914B31F01C5F6 /* Pods */,
+				C141435FA856FDF062FB0654 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8E5078F5251B5DE700DABE76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E5078F4251B5DE700DABE76 /* Holo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E5078F6251B5DE700DABE76 /* Holo */ = {
+			isa = PBXGroup;
+			children = (
+				8E5078F7251B5DE700DABE76 /* AppDelegate.swift */,
+				8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */,
+				8E5078FD251B5DE700DABE76 /* Main.storyboard */,
+				8E507903251B5DEB00DABE76 /* Assets.xcassets */,
+				8E05D73C251B75F4004F6C3B /* MapViewController.swift */,
+				8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */,
+				8E507908251B5DEB00DABE76 /* Info.plist */,
+				8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */,
+			);
+			path = Holo;
+			sourceTree = "<group>";
+		};
+		93A377E6DBC914B31F01C5F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E622CDBBF63B79E9A9907CE1 /* Pods-Holo.debug.xcconfig */,
+				7411A52E379CDA0E8B8D79AC /* Pods-Holo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C141435FA856FDF062FB0654 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E5078F3251B5DE700DABE76 /* Holo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E50790B251B5DEB00DABE76 /* Build configuration list for PBXNativeTarget "Holo" */;
+			buildPhases = (
+				091BB64E3FE725DBDA294F9F /* [CP] Check Pods Manifest.lock */,
+				8E5078F0251B5DE700DABE76 /* Sources */,
+				8E5078F1251B5DE700DABE76 /* Frameworks */,
+				8E5078F2251B5DE700DABE76 /* Resources */,
+				EACA21FC24CC20282C36A79E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Holo;
+			productName = Holo;
+			productReference = 8E5078F4251B5DE700DABE76 /* Holo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E5078EC251B5DE700DABE76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					8E5078F3251B5DE700DABE76 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 8E5078EF251B5DE700DABE76 /* Build configuration list for PBXProject "Holo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E5078EB251B5DE700DABE76;
+			productRefGroup = 8E5078F5251B5DE700DABE76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E5078F3251B5DE700DABE76 /* Holo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E5078F2251B5DE700DABE76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E507907251B5DEB00DABE76 /* LaunchScreen.storyboard in Resources */,
+				8E507904251B5DEB00DABE76 /* Assets.xcassets in Resources */,
+				8E5078FF251B5DE700DABE76 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		091BB64E3FE725DBDA294F9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Holo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EACA21FC24CC20282C36A79E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Holo/Pods-Holo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Holo/Pods-Holo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Holo/Pods-Holo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E5078F0251B5DE700DABE76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5078F8251B5DE700DABE76 /* AppDelegate.swift in Sources */,
+				8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */,
+				8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */,
+				8E05D73D251B75F4004F6C3B /* MapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8E5078FD251B5DE700DABE76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E5078FE251B5DE700DABE76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E507906251B5DEB00DABE76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E507909251B5DEB00DABE76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E50790A251B5DEB00DABE76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E50790C251B5DEB00DABE76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E622CDBBF63B79E9A9907CE1 /* Pods-Holo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GAPK9VY2U9;
+				INFOPLIST_FILE = Holo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.kaopu.Holo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E50790D251B5DEB00DABE76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7411A52E379CDA0E8B8D79AC /* Pods-Holo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GAPK9VY2U9;
+				INFOPLIST_FILE = Holo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.kaopu.Holo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E5078EF251B5DE700DABE76 /* Build configuration list for PBXProject "Holo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E507909251B5DEB00DABE76 /* Debug */,
+				8E50790A251B5DEB00DABE76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E50790B251B5DEB00DABE76 /* Build configuration list for PBXNativeTarget "Holo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E50790C251B5DEB00DABE76 /* Debug */,
+				8E50790D251B5DEB00DABE76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E507901251B5DE700DABE76 /* Holo.xcdatamodel */,
+			);
+			currentVersion = 8E507901251B5DE700DABE76 /* Holo.xcdatamodel */;
+			path = Holo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8E5078EC251B5DE700DABE76 /* Project object */;
+}
