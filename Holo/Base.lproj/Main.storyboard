@@ -31,14 +31,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GQj-y5-x4B">
-                        <barButtonItem key="leftBarButtonItem" title="addMarker" id="mxw-2W-qW8">
+                        <barButtonItem key="leftBarButtonItem" title="Start tracking" id="mxw-2W-qW8">
                             <connections>
-                                <action selector="addMarker:" destination="BYZ-38-t0r" id="grT-uR-ECp"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="to Red Square" id="Nc8-Qw-Sbq">
-                            <connections>
-                                <action selector="toRedSquare:" destination="BYZ-38-t0r" id="bJb-vB-9Dj"/>
+                                <action selector="trackingLocation:" destination="BYZ-38-t0r" id="5P4-it-Yqo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
