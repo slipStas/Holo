@@ -105,12 +105,13 @@ extension MapViewController: CLLocationManagerDelegate {
         mapView.animate(toLocation: coordinates.coordinate)
         mapView.animate(toBearing: coordinates.course)
         let marker = GMSMarker(position: coordinates.coordinate)
-        let rect = CGRect(x: 0, y: 0, width: 15, height: 15)
+        let rect = CGRect(x: 0, y: 0, width: 7, height: 7)
         let markerView = UIView(frame: rect)
         
         markerView.backgroundColor = .blue
         markerView.layer.cornerRadius = markerView.frame.height / 2
         marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+        marker.opacity = 0.5
 
         marker.map = mapView
         marker.iconView = markerView
@@ -120,7 +121,4 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
-    
-    
-    
 }
