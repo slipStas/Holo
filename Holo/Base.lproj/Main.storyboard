@@ -36,6 +36,11 @@
                                 <action selector="trackingLocation:" destination="BYZ-38-t0r" id="5P4-it-Yqo"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="KZT-pe-8Ad">
+                            <connections>
+                                <segue destination="t2g-4U-dA0" kind="show" id="SfH-1p-OMG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="vO6-jI-Zkn" id="ZYU-XY-4lV"/>
@@ -43,7 +48,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1949.2753623188407" y="80.357142857142847"/>
+            <point key="canvasLocation" x="1787" y="80"/>
+        </scene>
+        <!--Pathes View Controller-->
+        <scene sceneID="lVh-Ab-GPe">
+            <objects>
+                <viewController id="t2g-4U-dA0" customClass="PathesViewController" customModule="Holo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JpS-as-UY0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fvL-j8-QYH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pathes" rowHeight="88" id="O76-LA-F00" customClass="PathesTableViewCell" customModule="Holo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O76-LA-F00" id="qED-9I-LkF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-3k-oQ8">
+                                                    <rect key="frame" x="8" y="8" width="52" height="72"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kNY-3k-oQ8" secondAttribute="trailing" constant="8" id="2bM-D9-7uH"/>
+                                                <constraint firstAttribute="bottom" secondItem="kNY-3k-oQ8" secondAttribute="bottom" constant="8" id="BYC-MC-Xgx"/>
+                                                <constraint firstItem="kNY-3k-oQ8" firstAttribute="top" secondItem="qED-9I-LkF" secondAttribute="top" constant="8" id="Pe4-Cg-8in"/>
+                                                <constraint firstItem="kNY-3k-oQ8" firstAttribute="centerY" secondItem="qED-9I-LkF" secondAttribute="centerY" id="q9W-k9-nWW"/>
+                                                <constraint firstItem="kNY-3k-oQ8" firstAttribute="leading" secondItem="qED-9I-LkF" secondAttribute="leading" constant="8" id="zNZ-8T-9GU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pathesLabel" destination="kNY-3k-oQ8" id="PEk-Ly-5zI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SsY-np-nDD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SsY-np-nDD" firstAttribute="trailing" secondItem="fvL-j8-QYH" secondAttribute="trailing" id="4Uq-Jp-bhy"/>
+                            <constraint firstItem="fvL-j8-QYH" firstAttribute="top" secondItem="SsY-np-nDD" secondAttribute="top" id="5ZW-KU-qqs"/>
+                            <constraint firstItem="fvL-j8-QYH" firstAttribute="leading" secondItem="SsY-np-nDD" secondAttribute="leading" id="CK9-ci-uow"/>
+                            <constraint firstItem="SsY-np-nDD" firstAttribute="bottom" secondItem="fvL-j8-QYH" secondAttribute="bottom" id="Jar-26-Gmd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kyn-Df-Z8W"/>
+                    <connections>
+                        <outlet property="pathesTableView" destination="fvL-j8-QYH" id="355-gk-ION"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAf-dg-h2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0tF-uH-kuV">

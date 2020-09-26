@@ -14,6 +14,8 @@
 		8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */; };
 		8E507904251B5DEB00DABE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E507903251B5DEB00DABE76 /* Assets.xcassets */; };
 		8E507907251B5DEB00DABE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */; };
+		8EBD1F48251F3DE700C6B0BF /* PathesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD1F47251F3DE700C6B0BF /* PathesViewController.swift */; };
+		8EBD1F4D251F3EAC00C6B0BF /* PathesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD1F4C251F3EAC00C6B0BF /* PathesTableViewCell.swift */; };
 		FC26ABF4E1F09C1E68A7B33F /* Pods_Holo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		8E507903251B5DEB00DABE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E507906251B5DEB00DABE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E507908251B5DEB00DABE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EBD1F47251F3DE700C6B0BF /* PathesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathesViewController.swift; sourceTree = "<group>"; };
+		8EBD1F4C251F3EAC00C6B0BF /* PathesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathesTableViewCell.swift; sourceTree = "<group>"; };
 		B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E622CDBBF63B79E9A9907CE1 /* Pods-Holo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holo.debug.xcconfig"; path = "Target Support Files/Pods-Holo/Pods-Holo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,12 +73,30 @@
 				8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */,
 				8E5078FD251B5DE700DABE76 /* Main.storyboard */,
 				8E507903251B5DEB00DABE76 /* Assets.xcassets */,
-				8E05D73C251B75F4004F6C3B /* MapViewController.swift */,
+				8EBD1F4A251F3E6800C6B0BF /* View Controllers */,
 				8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */,
 				8E507908251B5DEB00DABE76 /* Info.plist */,
 				8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */,
 			);
 			path = Holo;
+			sourceTree = "<group>";
+		};
+		8EBD1F4A251F3E6800C6B0BF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8EBD1F4B251F3E8200C6B0BF /* Pathes View Controller */,
+				8E05D73C251B75F4004F6C3B /* MapViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8EBD1F4B251F3E8200C6B0BF /* Pathes View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8EBD1F47251F3DE700C6B0BF /* PathesViewController.swift */,
+				8EBD1F4C251F3EAC00C6B0BF /* PathesTableViewCell.swift */,
+			);
+			path = "Pathes View Controller";
 			sourceTree = "<group>";
 		};
 		93A377E6DBC914B31F01C5F6 /* Pods */ = {
@@ -212,6 +234,8 @@
 				8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */,
 				8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */,
 				8E05D73D251B75F4004F6C3B /* MapViewController.swift in Sources */,
+				8EBD1F4D251F3EAC00C6B0BF /* PathesTableViewCell.swift in Sources */,
+				8EBD1F48251F3DE700C6B0BF /* PathesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
