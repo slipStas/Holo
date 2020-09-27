@@ -11,6 +11,8 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
+    var coordinatesArray: [CoordinatesCoreData] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fiveMinutes = 5 * 60
     let coordinateMoscovCenter = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var marker: GMSMarker?
@@ -58,6 +60,12 @@ class MapViewController: UIViewController {
             sender.title = "Start tracking"
             self.isUpdateLocation = false
             self.mapView.animate(toBearing: .zero)
+            do {
+                try self.context.save()
+                print("save data")
+            } catch {
+                
+            }
         }
     }
     
@@ -146,6 +154,11 @@ extension MapViewController: CLLocationManagerDelegate {
         
         mapView.animate(toLocation: coordinates.coordinate)
         mapView.animate(toBearing: coordinates.course)
+        
+        let newCoordinateArray = CoordinatesCoreData(context: self.context)
+        newCoordinateArray.latitude = coordinates.coordinate.latitude
+        newCoordinateArray.longitude = coordinates.coordinate.longitude
+        self.coordinatesArray.append(newCoordinateArray)
         
         routePath?.add(coordinates.coordinate)
         route?.path = routePath

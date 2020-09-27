@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/stanislavslipchenko/swift/My_apps/Holo/Holo/CoordinatesCoreData+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/stanislavslipchenko/swift/My_apps/Holo/Holo/CoordinatesCoreData+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Holo.xcodeproj">
    </FileRef>
    <FileRef

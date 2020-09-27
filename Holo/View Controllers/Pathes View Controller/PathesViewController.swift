@@ -8,14 +8,29 @@
 import UIKit
 
 class PathesViewController: UIViewController {
+    
+    var coordinatesArray: [CoordinatesCoreData] = []
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var pathesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        load()
+        pathesTableView.reloadData()
+        
         pathesTableView.delegate = self
         pathesTableView.dataSource = self
+    }
+    
+    func load() {
+        do {
+            self.coordinatesArray = try context.fetch(CoordinatesCoreData.fetchRequest())
+            print(self.coordinatesArray.count)
+        } catch {
+            
+        }
     }
 }
 
@@ -27,13 +42,13 @@ extension PathesViewController: UITableViewDelegate {
 
 extension PathesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        6
+        self.coordinatesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pathes", for: indexPath) as! PathesTableViewCell
         
-        cell.pathesLabel.text = String(indexPath.row)
+        cell.pathesLabel.text = String(coordinatesArray[indexPath.row].latitude) + " " + String(coordinatesArray[indexPath.row].longitude)
         
         return cell
     }
