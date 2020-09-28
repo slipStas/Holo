@@ -11,11 +11,12 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    var coordinates: [CoordinatesCoreData?] = []
+    var transmittionRoute: Route?
+    var coordinates: [CoordinatesCoreData]?
     var routeCoreData: Route?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fiveMinutes = 5 * 60
-    let coordinateMoscovCenter = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
+//    let coordinateMoscovCenter = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var marker: GMSMarker?
     var manualMarker: GMSMarker?
     var locationManager: CLLocationManager?
@@ -43,7 +44,7 @@ class MapViewController: UIViewController {
             self.stopBackgroundTimer()
         }
         coordinates = [CoordinatesCoreData(context: self.context)]
-
+        
         configureMap()
         configureLocationManager()
         configureBackgroundTask()
@@ -65,7 +66,7 @@ class MapViewController: UIViewController {
             self.mapView.animate(toBearing: .zero)
             routeCoreData?.time = "date"
             routeCoreData?.routeLength = 12.12
-            coordinates.forEach {$0?.route = routeCoreData}
+            coordinates?.forEach {$0.route = routeCoreData}
             
             do {
                 try self.context.save()
@@ -76,16 +77,49 @@ class MapViewController: UIViewController {
             }
             
             routeCoreData = nil
-            coordinates.removeAll()
+            coordinates?.removeAll()
         }
     }
     
+    
+    @IBAction func addRoute(segue: UIStoryboardSegue) {
+        if segue.identifier == "addRout" {
+            let pathesVC = segue.source as! PathesViewController
+            if let indexPath = pathesVC.pathesTableView.indexPathForSelectedRow {
+                let route = pathesVC.routsArray[indexPath.row]
+                self.transmittionRoute = route
+            }
+        }
+        if transmittionRoute != nil {
+            
+            let coordinates = (transmittionRoute?.coordinates?.allObjects as? [CoordinatesCoreData])
+            var cllCoordinates: [CLLocationCoordinate2D] = []
+            coordinates?.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
+            
+            let bounds = GMSCoordinateBounds(coordinate: cllCoordinates.first!, coordinate: cllCoordinates.last!)
+            let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
+            mapView.camera = camera
+            routePath?.removeAllCoordinates()
+            
+            cllCoordinates.forEach { (coordinate) in
+                print(coordinate)
+                routePath?.add(coordinate)
+                route?.path = routePath
+            }
+            route?.strokeWidth = 5
+            route?.strokeColor = .orange
+            route?.map = mapView
+        }
+    }
+
+    
     func configureMap() {
         
-        let camera = GMSCameraPosition.camera(withTarget: coordinateMoscovCenter, zoom: 17)
+        let camera = GMSCameraPosition()
 
         mapView.camera = camera
-        mapView.isTrafficEnabled = true
+        mapView.animate(toZoom: 15)
+//        mapView.isTrafficEnabled = true
         mapView.mapType = .normal
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
@@ -159,7 +193,8 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
                 
         guard let location = locations.first else {return}
-        
+        print(location.coordinate)
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
         let newCoordinates = CoordinatesCoreData(context: self.context)
         
         if isUpdateLocation {
@@ -169,7 +204,7 @@ extension MapViewController: CLLocationManagerDelegate {
             newCoordinates.latitude = location.coordinate.latitude
             newCoordinates.longitude = location.coordinate.longitude
             
-            coordinates.append(newCoordinates)
+            coordinates?.append(newCoordinates)
             
             routePath?.add(location.coordinate)
             route?.path = routePath
