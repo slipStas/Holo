@@ -68,7 +68,7 @@ class MapViewController: UIViewController {
             routeCoreData?.time = "date"
             routeCoreData?.routeLength = 12.12
             coordinates?.forEach {$0.route = routeCoreData}
-            coordinates?.forEach {print($0.latitude)}
+//            coordinates?.forEach {print($0.latitude)}
             
             do {
                 try self.context.save()
