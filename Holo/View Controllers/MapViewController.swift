@@ -11,7 +11,8 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    var coordinatesArray: [CoordinatesCoreData] = []
+    var coordinates: [CoordinatesCoreData?] = []
+    var routeCoreData: Route?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fiveMinutes = 5 * 60
     let coordinateMoscovCenter = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
@@ -41,16 +42,17 @@ class MapViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { (notification) in
             self.stopBackgroundTimer()
         }
-        
+        coordinates = [CoordinatesCoreData(context: self.context)]
+        routeCoreData = Route(context: self.context)
+
         configureMap()
         configureLocationManager()
         configureBackgroundTask()
         backgroundTimerCount = fiveMinutes
-        
-        
     }
     
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
+        
         if !isUpdateLocation {
             locationManager?.startUpdatingLocation()
             sender.title = "Stop tracking"
@@ -60,11 +62,16 @@ class MapViewController: UIViewController {
             sender.title = "Start tracking"
             self.isUpdateLocation = false
             self.mapView.animate(toBearing: .zero)
+            routeCoreData?.time = "date"
+            routeCoreData?.routeLength = 12.12
+            coordinates.forEach {$0?.route = routeCoreData}
+            
             do {
                 try self.context.save()
+                print(routeCoreData?.coordinates?.count ?? 0)
                 print("save data")
-            } catch {
-                
+            } catch let error {
+                print(error.localizedDescription)
             }
         }
     }
@@ -133,7 +140,6 @@ class MapViewController: UIViewController {
 extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        print(coordinate)
         
         if let manualMarker = manualMarker {
             manualMarker.position = coordinate
@@ -147,27 +153,36 @@ extension MapViewController: GMSMapViewDelegate {
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+                
+        guard let location = locations.first else {return}
         
-        locations.forEach {print($0.coordinate)}
+        let newCoordinates = CoordinatesCoreData(context: self.context)
         
-        guard let coordinates = locations.first else {return}
-        
-        mapView.animate(toLocation: coordinates.coordinate)
-        mapView.animate(toBearing: coordinates.course)
-        
-        let newCoordinateArray = CoordinatesCoreData(context: self.context)
-        newCoordinateArray.latitude = coordinates.coordinate.latitude
-        newCoordinateArray.longitude = coordinates.coordinate.longitude
-        self.coordinatesArray.append(newCoordinateArray)
-        
-        routePath?.add(coordinates.coordinate)
-        route?.path = routePath
-        route?.strokeWidth = 5
-        route?.strokeColor = .orange
+        if isUpdateLocation {
+            mapView.animate(toLocation: location.coordinate)
+            mapView.animate(toBearing: location.course)
+            
+            newCoordinates.latitude = location.coordinate.latitude
+            newCoordinates.longitude = location.coordinate.longitude
+            
+            coordinates.append(newCoordinates)
+            
+//            do {
+//                try self.context.save()
+//            print(routeCoreData?.coordinates?.count as Any)
+//                print("save data")
+//            } catch let error {
+//                print(error.localizedDescription)
+//            }
+            
+            routePath?.add(location.coordinate)
+            route?.path = routePath
+            route?.strokeWidth = 5
+            route?.strokeColor = .orange
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-        print("===========================")
     }
 }

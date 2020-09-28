@@ -1,8 +1,8 @@
 //
 //  CoordinatesCoreData+CoreDataClass.swift
-//  
+//  Holo
 //
-//  Created by Stanislav Slipchenko on 27.09.2020.
+//  Created by Stanislav Slipchenko on 28.09.2020.
 //
 //
 
