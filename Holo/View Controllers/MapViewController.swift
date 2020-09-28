@@ -53,6 +53,7 @@ class MapViewController: UIViewController {
     
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
         
+        coordinates?.remove(at: 0)
         if !isUpdateLocation {
             routeCoreData = Route(context: self.context)
 
@@ -67,6 +68,7 @@ class MapViewController: UIViewController {
             routeCoreData?.time = "date"
             routeCoreData?.routeLength = 12.12
             coordinates?.forEach {$0.route = routeCoreData}
+            coordinates?.forEach {print($0.latitude)}
             
             do {
                 try self.context.save()
@@ -92,13 +94,16 @@ class MapViewController: UIViewController {
         }
         if transmittionRoute != nil {
             
-            let coordinates = (transmittionRoute?.coordinates?.allObjects as? [CoordinatesCoreData])
+            guard let coordinates = (transmittionRoute?.coordinates?.allObjects as? [CoordinatesCoreData]) else {return}
             var cllCoordinates: [CLLocationCoordinate2D] = []
-            coordinates?.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
+            coordinates.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
             
-            let bounds = GMSCoordinateBounds(coordinate: cllCoordinates.first!, coordinate: cllCoordinates.last!)
-            let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
-            mapView.camera = camera
+            if cllCoordinates.count > 0 {
+                let bounds = GMSCoordinateBounds(coordinate: cllCoordinates.first!, coordinate: cllCoordinates.last!)
+                let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
+                mapView.camera = camera
+            }
+            
             routePath?.removeAllCoordinates()
             
             cllCoordinates.forEach { (coordinate) in

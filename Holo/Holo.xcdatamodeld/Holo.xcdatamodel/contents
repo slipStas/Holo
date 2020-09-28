@@ -11,7 +11,7 @@
         <relationship name="coordinates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoordinatesCoreData" inverseName="route" inverseEntity="CoordinatesCoreData"/>
     </entity>
     <elements>
-        <element name="Route" positionX="-54" positionY="9" width="128" height="88"/>
         <element name="CoordinatesCoreData" positionX="-54" positionY="36" width="128" height="88"/>
+        <element name="Route" positionX="-54" positionY="9" width="128" height="88"/>
     </elements>
 </model>
