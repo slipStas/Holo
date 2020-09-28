@@ -43,7 +43,6 @@ class MapViewController: UIViewController {
             self.stopBackgroundTimer()
         }
         coordinates = [CoordinatesCoreData(context: self.context)]
-        routeCoreData = Route(context: self.context)
 
         configureMap()
         configureLocationManager()
@@ -54,6 +53,8 @@ class MapViewController: UIViewController {
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
         
         if !isUpdateLocation {
+            routeCoreData = Route(context: self.context)
+
             locationManager?.startUpdatingLocation()
             sender.title = "Stop tracking"
             self.isUpdateLocation = true
@@ -73,6 +74,9 @@ class MapViewController: UIViewController {
             } catch let error {
                 print(error.localizedDescription)
             }
+            
+            routeCoreData = nil
+            coordinates.removeAll()
         }
     }
     
@@ -166,14 +170,6 @@ extension MapViewController: CLLocationManagerDelegate {
             newCoordinates.longitude = location.coordinate.longitude
             
             coordinates.append(newCoordinates)
-            
-//            do {
-//                try self.context.save()
-//            print(routeCoreData?.coordinates?.count as Any)
-//                print("save data")
-//            } catch let error {
-//                print(error.localizedDescription)
-//            }
             
             routePath?.add(location.coordinate)
             route?.path = routePath
