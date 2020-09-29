@@ -16,7 +16,6 @@ class MapViewController: UIViewController {
     var routeCoreData: Route?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fiveMinutes = 5 * 60
-//    let coordinateMoscovCenter = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var marker: GMSMarker?
     var manualMarker: GMSMarker?
     var locationManager: CLLocationManager?
@@ -32,6 +31,7 @@ class MapViewController: UIViewController {
     var routePath: GMSMutablePath?
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var showAllRoutesButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,14 +53,21 @@ class MapViewController: UIViewController {
     
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
         
-        coordinates?.remove(at: 0)
+        if coordinates!.count > 0 {
+            coordinates?.remove(at: 0)
+        }
+        routePath?.removeAllCoordinates()
+        
         if !isUpdateLocation {
+            mapView.animate(toZoom: 16)
+            showAllRoutesButton.isEnabled = false
             routeCoreData = Route(context: self.context)
 
             locationManager?.startUpdatingLocation()
             sender.title = "Stop tracking"
             self.isUpdateLocation = true
         } else {
+            showAllRoutesButton.isEnabled = true
             locationManager?.stopUpdatingLocation()
             sender.title = "Start tracking"
             self.isUpdateLocation = false
@@ -68,7 +75,6 @@ class MapViewController: UIViewController {
             routeCoreData?.time = "date"
             routeCoreData?.routeLength = 12.12
             coordinates?.forEach {$0.route = routeCoreData}
-//            coordinates?.forEach {print($0.latitude)}
             
             do {
                 try self.context.save()
@@ -99,9 +105,13 @@ class MapViewController: UIViewController {
             coordinates.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
             
             if cllCoordinates.count > 0 {
-                let bounds = GMSCoordinateBounds(coordinate: cllCoordinates.first!, coordinate: cllCoordinates.last!)
+                var bounds = GMSCoordinateBounds()
+                cllCoordinates.forEach { (location) in
+                    bounds = bounds.includingCoordinate(location)
+                }
                 let camera = mapView.camera(for: bounds, insets: UIEdgeInsets())!
                 mapView.camera = camera
+                mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30))
             }
             
             routePath?.removeAllCoordinates()
@@ -123,8 +133,8 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition()
 
         mapView.camera = camera
-        mapView.animate(toZoom: 15)
-//        mapView.isTrafficEnabled = true
+        mapView.animate(toZoom: 16)
+        mapView.isTrafficEnabled = true
         mapView.mapType = .normal
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true

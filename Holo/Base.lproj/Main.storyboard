@@ -44,6 +44,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="vO6-jI-Zkn" id="ZYU-XY-4lV"/>
+                        <outlet property="showAllRoutesButton" destination="KZT-pe-8Ad" id="RZm-l3-Obc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
