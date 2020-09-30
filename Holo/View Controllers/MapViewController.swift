@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     var coordinates: [CoordinatesCoreData]?
     var routeCoreData: Route?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let fiveMinutes = 5 * 60
+//    let fiveMinutes = 5 * 60
     var marker: GMSMarker?
     var manualMarker: GMSMarker?
     var locationManager: CLLocationManager?
@@ -38,18 +38,20 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { (notification) in
-            self.startBackgroundTimer()
+            print("app did enter to background")
+//            self.startBackgroundTimer()
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { (notification) in
-            self.stopBackgroundTimer()
+            print("app will enter foreground")
+//            self.stopBackgroundTimer()
         }
         coordinates = [CoordinatesCoreData(context: self.context)]
         
         configureMap()
         configureLocationManager()
         configureBackgroundTask()
-        backgroundTimerCount = fiveMinutes
+        backgroundTimerCount = 0
     }
     
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
@@ -60,6 +62,7 @@ class MapViewController: UIViewController {
         routePath?.removeAllCoordinates()
         
         if !isUpdateLocation {
+            startBackgroundTimer()
             mapView.animate(toZoom: 16)
             showAllRoutesButton.isEnabled = false
             routeCoreData = Route(context: self.context)
@@ -73,8 +76,13 @@ class MapViewController: UIViewController {
             sender.title = "Start tracking"
             self.isUpdateLocation = false
             self.mapView.animate(toBearing: .zero)
-            routeCoreData?.time = "date"
-            routeCoreData?.routeLength = 12.12
+            routeCoreData?.time = String(backgroundTimerCount)
+            routeCoreData?.date = Date()
+//            routeCoreData?.routeLength = 12.12
+            coordinates?.forEach({ (coord) in
+                routeCoreData?.routeLength += (coord.speed * 1000 * 1.609 / 60 / 60)
+            })
+//            routeCoreData?.routeLength = routeCoreData?.routeLength ?? 0.0 * Double(backgroundTimerCount / 60 / 60)
             coordinates?.forEach {$0.route = routeCoreData}
             
             do {
@@ -84,7 +92,7 @@ class MapViewController: UIViewController {
             } catch let error {
                 print(error.localizedDescription)
             }
-            
+            stopBackgroundTimer()
             routeCoreData = nil
             coordinates?.removeAll()
         }
@@ -104,9 +112,7 @@ class MapViewController: UIViewController {
             
             guard let coordinates = (transmittionRoute?.coordinates?.allObjects as? [CoordinatesCoreData]) else {return}
             var cllCoordinates: [CLLocationCoordinate2D] = []
-            coordinates.sorted {$0.index < $1.index}.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
-//            coordinates.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
-            
+            coordinates.sorted {$0.index < $1.index}.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}            
             
             if cllCoordinates.count > 0 {
                 var bounds = GMSCoordinateBounds()
@@ -174,22 +180,23 @@ class MapViewController: UIViewController {
         print("start timer")
         
         backgroundTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
-            switch self?.backgroundTimerCount {
-            case 0:
-                self?.backgroundTimer?.invalidate()
-                self?.backgroundTimer = nil
-                UIApplication.shared.endBackgroundTask((self?.beginBackgroundTimerTask)!)
-                self?.beginBackgroundTimerTask = UIBackgroundTaskIdentifier.invalid
-            default:
-                self?.backgroundTimerCount -= 1
-            }
+            self?.backgroundTimerCount += 1
+//            switch self?.backgroundTimerCount {
+//            case 0:
+//                self?.backgroundTimer?.invalidate()
+//                self?.backgroundTimer = nil
+//                UIApplication.shared.endBackgroundTask((self?.beginBackgroundTimerTask)!)
+//                self?.beginBackgroundTimerTask = UIBackgroundTaskIdentifier.invalid
+//            default:
+//                self?.backgroundTimerCount += 1
+//            }
         })
     }
     
     func stopBackgroundTimer() {
         self.backgroundTimer?.invalidate()
         self.backgroundTimer = nil
-        self.backgroundTimerCount = fiveMinutes
+        self.backgroundTimerCount = 0
         print("stop timer")
     }
 }
@@ -212,7 +219,6 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
                 
         guard let location = locations.first else {return}
-        print(location.coordinate)
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
         let newCoordinates = CoordinatesCoreData(context: self.context)
         
@@ -222,6 +228,7 @@ extension MapViewController: CLLocationManagerDelegate {
             
             newCoordinates.latitude = location.coordinate.latitude
             newCoordinates.longitude = location.coordinate.longitude
+            newCoordinates.speed = location.speed
             newCoordinates.index = idCounter
             
             coordinates?.append(newCoordinates)

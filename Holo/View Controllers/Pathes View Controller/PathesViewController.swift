@@ -48,7 +48,16 @@ extension PathesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pathes", for: indexPath) as! PathesTableViewCell
         
-        cell.pathesLabel.text = String(routsArray[indexPath.row].routeLength) + " " + (routsArray[indexPath.row].time ?? "0:0") + " " + String(describing: routsArray[indexPath.row].coordinates?.count)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        
+        /// for russian language
+        /// dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "HH:mm  EEE, d MMMM"
+        
+        cell.pathesLabel.text = String(format: "%.0f", routsArray[indexPath.row].routeLength) + " meters " + (routsArray[indexPath.row].time ?? "0:0") + " sec."// + String(describing: routsArray[indexPath.row].coordinates?.count)
+        cell.dateLabel.text = dateFormatter.string(from: routsArray[indexPath.row].date ?? Date())
         
         return cell
     }

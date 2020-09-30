@@ -71,21 +71,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-3k-oQ8">
-                                                    <rect key="frame" x="8" y="8" width="52" height="72"/>
+                                                    <rect key="frame" x="8" y="8" width="52" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvS-zY-f0l">
+                                                    <rect key="frame" x="8" y="60" width="42" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="2pU-gm-uvJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kNY-3k-oQ8" secondAttribute="trailing" constant="8" id="2bM-D9-7uH"/>
-                                                <constraint firstAttribute="bottom" secondItem="kNY-3k-oQ8" secondAttribute="bottom" constant="8" id="BYC-MC-Xgx"/>
+                                                <constraint firstItem="WvS-zY-f0l" firstAttribute="leading" secondItem="kNY-3k-oQ8" secondAttribute="leading" id="3yC-Tr-h4V"/>
                                                 <constraint firstItem="kNY-3k-oQ8" firstAttribute="top" secondItem="qED-9I-LkF" secondAttribute="top" constant="8" id="Pe4-Cg-8in"/>
-                                                <constraint firstItem="kNY-3k-oQ8" firstAttribute="centerY" secondItem="qED-9I-LkF" secondAttribute="centerY" id="q9W-k9-nWW"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WvS-zY-f0l" secondAttribute="trailing" constant="8" id="dBe-gE-2nR"/>
+                                                <constraint firstItem="WvS-zY-f0l" firstAttribute="top" secondItem="kNY-3k-oQ8" secondAttribute="bottom" constant="8" id="m0g-wZ-Cl2"/>
+                                                <constraint firstAttribute="bottom" secondItem="WvS-zY-f0l" secondAttribute="bottom" constant="8" id="obf-Wj-IuT"/>
                                                 <constraint firstItem="kNY-3k-oQ8" firstAttribute="leading" secondItem="qED-9I-LkF" secondAttribute="leading" constant="8" id="zNZ-8T-9GU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="WvS-zY-f0l" id="GRs-Nr-rUJ"/>
                                             <outlet property="pathesLabel" destination="kNY-3k-oQ8" id="PEk-Ly-5zI"/>
                                             <segue destination="IaN-JV-Qz3" kind="unwind" identifier="addRout" unwindAction="addRouteWithSegue:" id="ErR-Vt-cSq"/>
                                         </connections>

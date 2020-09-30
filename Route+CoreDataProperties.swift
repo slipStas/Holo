@@ -2,7 +2,7 @@
 //  Route+CoreDataProperties.swift
 //  Holo
 //
-//  Created by Stanislav Slipchenko on 30.09.2020.
+//  Created by Stanislav Slipchenko on 01.10.2020.
 //
 //
 
@@ -18,6 +18,7 @@ extension Route {
 
     @NSManaged public var routeLength: Double
     @NSManaged public var time: String?
+    @NSManaged public var date: Date?
     @NSManaged public var coordinates: NSSet?
 
 }
