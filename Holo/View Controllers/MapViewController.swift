@@ -29,6 +29,7 @@ class MapViewController: UIViewController {
     var beginBackgroundTimerTask: UIBackgroundTaskIdentifier?
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
+    var idCounter: Int64 = 0
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var showAllRoutesButton: UIBarButtonItem!
@@ -78,7 +79,7 @@ class MapViewController: UIViewController {
             
             do {
                 try self.context.save()
-                print(routeCoreData?.coordinates?.count ?? 0)
+                idCounter = 0
                 print("save data")
             } catch let error {
                 print(error.localizedDescription)
@@ -96,13 +97,16 @@ class MapViewController: UIViewController {
             if let indexPath = pathesVC.pathesTableView.indexPathForSelectedRow {
                 let route = pathesVC.routsArray[indexPath.row]
                 self.transmittionRoute = route
+                self.transmittionRoute?.coordinates?.forEach {print($0)}
             }
         }
         if transmittionRoute != nil {
             
             guard let coordinates = (transmittionRoute?.coordinates?.allObjects as? [CoordinatesCoreData]) else {return}
             var cllCoordinates: [CLLocationCoordinate2D] = []
-            coordinates.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
+            coordinates.sorted {$0.index < $1.index}.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
+//            coordinates.forEach {cllCoordinates.append(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))}
+            
             
             if cllCoordinates.count > 0 {
                 var bounds = GMSCoordinateBounds()
@@ -218,6 +222,7 @@ extension MapViewController: CLLocationManagerDelegate {
             
             newCoordinates.latitude = location.coordinate.latitude
             newCoordinates.longitude = location.coordinate.longitude
+            newCoordinates.index = idCounter
             
             coordinates?.append(newCoordinates)
             
@@ -225,6 +230,7 @@ extension MapViewController: CLLocationManagerDelegate {
             route?.path = routePath
             route?.strokeWidth = 5
             route?.strokeColor = .orange
+            idCounter += 1
         }
     }
     

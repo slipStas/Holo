@@ -14,10 +14,10 @@
 		8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */; };
 		8E507904251B5DEB00DABE76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E507903251B5DEB00DABE76 /* Assets.xcassets */; };
 		8E507907251B5DEB00DABE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */; };
-		8EA1CE722523548B00AA3765 /* Route+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE6E2523548B00AA3765 /* Route+CoreDataClass.swift */; };
-		8EA1CE732523548B00AA3765 /* Route+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE6F2523548B00AA3765 /* Route+CoreDataProperties.swift */; };
-		8EA1CE742523548B00AA3765 /* CoordinatesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE702523548B00AA3765 /* CoordinatesCoreData+CoreDataClass.swift */; };
-		8EA1CE752523548B00AA3765 /* CoordinatesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE712523548B00AA3765 /* CoordinatesCoreData+CoreDataProperties.swift */; };
+		8EA1CE902524A4D200AA3765 /* Route+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE8C2524A4D200AA3765 /* Route+CoreDataClass.swift */; };
+		8EA1CE912524A4D200AA3765 /* Route+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE8D2524A4D200AA3765 /* Route+CoreDataProperties.swift */; };
+		8EA1CE922524A4D200AA3765 /* CoordinatesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE8E2524A4D200AA3765 /* CoordinatesCoreData+CoreDataClass.swift */; };
+		8EA1CE932524A4D200AA3765 /* CoordinatesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1CE8F2524A4D200AA3765 /* CoordinatesCoreData+CoreDataProperties.swift */; };
 		8EBD1F48251F3DE700C6B0BF /* PathesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD1F47251F3DE700C6B0BF /* PathesViewController.swift */; };
 		8EBD1F4D251F3EAC00C6B0BF /* PathesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD1F4C251F3EAC00C6B0BF /* PathesTableViewCell.swift */; };
 		FC26ABF4E1F09C1E68A7B33F /* Pods_Holo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */; };
@@ -34,10 +34,10 @@
 		8E507903251B5DEB00DABE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E507906251B5DEB00DABE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E507908251B5DEB00DABE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8EA1CE6E2523548B00AA3765 /* Route+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		8EA1CE6F2523548B00AA3765 /* Route+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		8EA1CE702523548B00AA3765 /* CoordinatesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatesCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		8EA1CE712523548B00AA3765 /* CoordinatesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatesCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		8EA1CE8C2524A4D200AA3765 /* Route+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		8EA1CE8D2524A4D200AA3765 /* Route+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		8EA1CE8E2524A4D200AA3765 /* CoordinatesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatesCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		8EA1CE8F2524A4D200AA3765 /* CoordinatesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatesCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		8EBD1F47251F3DE700C6B0BF /* PathesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathesViewController.swift; sourceTree = "<group>"; };
 		8EBD1F4C251F3EAC00C6B0BF /* PathesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathesTableViewCell.swift; sourceTree = "<group>"; };
 		B8A0963F5E07FC9D644C49D5 /* Pods_Holo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,10 +93,10 @@
 		8E616E912521E10B00C8001C /* Core Data Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8EA1CE6E2523548B00AA3765 /* Route+CoreDataClass.swift */,
-				8EA1CE6F2523548B00AA3765 /* Route+CoreDataProperties.swift */,
-				8EA1CE702523548B00AA3765 /* CoordinatesCoreData+CoreDataClass.swift */,
-				8EA1CE712523548B00AA3765 /* CoordinatesCoreData+CoreDataProperties.swift */,
+				8EA1CE8C2524A4D200AA3765 /* Route+CoreDataClass.swift */,
+				8EA1CE8D2524A4D200AA3765 /* Route+CoreDataProperties.swift */,
+				8EA1CE8E2524A4D200AA3765 /* CoordinatesCoreData+CoreDataClass.swift */,
+				8EA1CE8F2524A4D200AA3765 /* CoordinatesCoreData+CoreDataProperties.swift */,
 			);
 			path = "Core Data Classes";
 			sourceTree = "<group>";
@@ -253,12 +253,12 @@
 				8E5078F8251B5DE700DABE76 /* AppDelegate.swift in Sources */,
 				8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */,
 				8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */,
-				8EA1CE732523548B00AA3765 /* Route+CoreDataProperties.swift in Sources */,
-				8EA1CE722523548B00AA3765 /* Route+CoreDataClass.swift in Sources */,
-				8EA1CE742523548B00AA3765 /* CoordinatesCoreData+CoreDataClass.swift in Sources */,
+				8EA1CE912524A4D200AA3765 /* Route+CoreDataProperties.swift in Sources */,
+				8EA1CE902524A4D200AA3765 /* Route+CoreDataClass.swift in Sources */,
+				8EA1CE922524A4D200AA3765 /* CoordinatesCoreData+CoreDataClass.swift in Sources */,
 				8E05D73D251B75F4004F6C3B /* MapViewController.swift in Sources */,
 				8EBD1F4D251F3EAC00C6B0BF /* PathesTableViewCell.swift in Sources */,
-				8EA1CE752523548B00AA3765 /* CoordinatesCoreData+CoreDataProperties.swift in Sources */,
+				8EA1CE932524A4D200AA3765 /* CoordinatesCoreData+CoreDataProperties.swift in Sources */,
 				8EBD1F48251F3DE700C6B0BF /* PathesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

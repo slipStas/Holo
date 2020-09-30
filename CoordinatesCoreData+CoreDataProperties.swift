@@ -2,7 +2,7 @@
 //  CoordinatesCoreData+CoreDataProperties.swift
 //  Holo
 //
-//  Created by Stanislav Slipchenko on 29.09.2020.
+//  Created by Stanislav Slipchenko on 30.09.2020.
 //
 //
 
@@ -18,6 +18,7 @@ extension CoordinatesCoreData {
 
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
+    @NSManaged public var index: Int64
     @NSManaged public var route: Route?
 
 }
