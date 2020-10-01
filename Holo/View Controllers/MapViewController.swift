@@ -34,6 +34,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var showAllRoutesButton: UIBarButtonItem!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var clearRoutsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,7 @@ class MapViewController: UIViewController {
             startBackgroundTimer()
             mapView.animate(toZoom: 16)
             showAllRoutesButton.isEnabled = false
+            clearRoutsButton.isEnabled = false
             routeCoreData = Route(context: self.context)
 
             locationManager?.startUpdatingLocation()
@@ -72,6 +74,7 @@ class MapViewController: UIViewController {
             self.isUpdateLocation = true
         } else {
             showAllRoutesButton.isEnabled = true
+            clearRoutsButton.isEnabled = true
             locationManager?.stopUpdatingLocation()
             sender.title = "Start tracking"
             self.isUpdateLocation = false
@@ -136,16 +139,16 @@ class MapViewController: UIViewController {
     }
 
     @IBAction func logOut(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
-        loginVC.modalPresentationStyle = .fullScreen
-        
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
-//            self.present(loginVC, animated: true, completion: nil)
         }
         defaults.set(false, forKey: "isLogin")
         print("go to LoginViewController")
+    }
+    
+    @IBAction func clearRoute(_ sender: Any) {
+        mapView.clear()
+        configureLocationManager()
     }
     
     func configureMap() {
@@ -154,7 +157,7 @@ class MapViewController: UIViewController {
 
         mapView.camera = camera
         mapView.animate(toZoom: 16)
-        mapView.isTrafficEnabled = true
+//        mapView.isTrafficEnabled = true
         mapView.mapType = .normal
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
@@ -202,13 +205,18 @@ class MapViewController: UIViewController {
     }
     
     func setupLogOutButton() {
-        logOutButton.frame = CGRect(x: 10, y: 100, width: 85, height: 44)
 
         logOutButton.setTitle("Log out", for: .normal)
-        logOutButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
         logOutButton.layer.cornerRadius = self.logOutButton.frame.height / 3
-        logOutButton.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.7)
         logOutButton.layer.masksToBounds = true
+        logOutButton.layer.borderWidth = 1
+        logOutButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        clearRoutsButton.setTitle("Clear rout", for: .normal)
+        clearRoutsButton.layer.cornerRadius = self.logOutButton.frame.height / 3
+        clearRoutsButton.layer.masksToBounds = true
+        clearRoutsButton.layer.borderWidth = 1
+        clearRoutsButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
 }
 
