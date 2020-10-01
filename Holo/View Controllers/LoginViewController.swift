@@ -17,13 +17,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var systemInformationLabel: UILabel!
-    
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadUsers()
-
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -63,17 +61,37 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: Any) {
-        user = User(context: self.context)
         
+        var isUserExist = false
         
-        user?.login = self.loginTextField.text
-        user?.password = self.passwordTextField.text
+        usersArray.forEach { (user) in
+            if user.login == self.loginTextField.text {
+                isUserExist = true
+            }
+        }
+        
+        switch isUserExist {
+        case true:
+            print("user is exist")
+            usersArray.forEach { (user) in
+                if user.login == self.loginTextField.text {
+                    user.setValue(self.passwordTextField.text, forKey: "password")
+                }
+            }
+        case false:
+            user = User(context: self.context)
+            print("user is not exist")
+            user?.login = self.loginTextField.text
+            user?.password = self.passwordTextField.text
+        }
         
         do {
             try context.save()
         } catch let error {
             print(error.localizedDescription)
         }
+        
+        self.usersArray.removeAll()
         self.loadUsers()
     }
     
