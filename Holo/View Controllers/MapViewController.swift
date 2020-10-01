@@ -21,7 +21,7 @@ class MapViewController: UIViewController {
     var locationManager: CLLocationManager?
     var isUpdateLocation = false
     var backgroundTimer: Timer?
-    var backgroundTimerCount = 0 {
+    var backgroundTimerCount = 0.0 {
         didSet {
             print(backgroundTimerCount)
         }
@@ -39,19 +39,17 @@ class MapViewController: UIViewController {
 
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { (notification) in
             print("app did enter to background")
-//            self.startBackgroundTimer()
         }
         
         NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { (notification) in
             print("app will enter foreground")
-//            self.stopBackgroundTimer()
         }
         coordinates = [CoordinatesCoreData(context: self.context)]
         
         configureMap()
         configureLocationManager()
         configureBackgroundTask()
-        backgroundTimerCount = 0
+        backgroundTimerCount = 0.0
     }
     
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
@@ -76,13 +74,11 @@ class MapViewController: UIViewController {
             sender.title = "Start tracking"
             self.isUpdateLocation = false
             self.mapView.animate(toBearing: .zero)
-            routeCoreData?.time = String(backgroundTimerCount)
+            routeCoreData?.time = backgroundTimerCount
             routeCoreData?.date = Date()
-//            routeCoreData?.routeLength = 12.12
             coordinates?.forEach({ (coord) in
                 routeCoreData?.routeLength += (coord.speed * 1000 * 1.609 / 60 / 60)
             })
-//            routeCoreData?.routeLength = routeCoreData?.routeLength ?? 0.0 * Double(backgroundTimerCount / 60 / 60)
             coordinates?.forEach {$0.route = routeCoreData}
             
             do {

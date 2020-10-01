@@ -56,7 +56,7 @@ extension PathesViewController: UITableViewDataSource {
         /// dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "HH:mm  EEE, d MMMM"
         
-        cell.pathesLabel.text = String(format: "%.0f", routsArray[indexPath.row].routeLength) + " meters " + (routsArray[indexPath.row].time ?? "0:0") + " sec."// + String(describing: routsArray[indexPath.row].coordinates?.count)
+        cell.pathesLabel.text = String(format: "%.0f", routsArray[indexPath.row].routeLength) + " meters, " + routsArray[indexPath.row].time.asString(style: .abbreviated)
         cell.dateLabel.text = dateFormatter.string(from: routsArray[indexPath.row].date ?? Date())
         
         return cell

@@ -17,7 +17,7 @@ extension Route {
     }
 
     @NSManaged public var routeLength: Double
-    @NSManaged public var time: String?
+    @NSManaged public var time: Double
     @NSManaged public var date: Date?
     @NSManaged public var coordinates: NSSet?
 

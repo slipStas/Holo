@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8E05D73D251B75F4004F6C3B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E05D73C251B75F4004F6C3B /* MapViewController.swift */; };
-		8E4F668025253A0C0022FBFC /* Route+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F667C25253A0C0022FBFC /* Route+CoreDataClass.swift */; };
-		8E4F668125253A0C0022FBFC /* Route+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F667D25253A0C0022FBFC /* Route+CoreDataProperties.swift */; };
-		8E4F668225253A0C0022FBFC /* CoordinatesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F667E25253A0C0022FBFC /* CoordinatesCoreData+CoreDataClass.swift */; };
-		8E4F668325253A0C0022FBFC /* CoordinatesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F667F25253A0C0022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */; };
+		8E4F66862525C82C0022FBFC /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66852525C82C0022FBFC /* DoubleExtension.swift */; };
+		8E4F66972525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66932525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift */; };
+		8E4F66982525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66942525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */; };
+		8E4F66992525C9500022FBFC /* Route+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66952525C9500022FBFC /* Route+CoreDataClass.swift */; };
+		8E4F669A2525C9500022FBFC /* Route+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66962525C9500022FBFC /* Route+CoreDataProperties.swift */; };
 		8E5078F8251B5DE700DABE76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5078F7251B5DE700DABE76 /* AppDelegate.swift */; };
 		8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */; };
 		8E5078FF251B5DE700DABE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E5078FD251B5DE700DABE76 /* Main.storyboard */; };
@@ -26,10 +27,11 @@
 /* Begin PBXFileReference section */
 		7411A52E379CDA0E8B8D79AC /* Pods-Holo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holo.release.xcconfig"; path = "Target Support Files/Pods-Holo/Pods-Holo.release.xcconfig"; sourceTree = "<group>"; };
 		8E05D73C251B75F4004F6C3B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8E4F667C25253A0C0022FBFC /* Route+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		8E4F667D25253A0C0022FBFC /* Route+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		8E4F667E25253A0C0022FBFC /* CoordinatesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatesCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		8E4F667F25253A0C0022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatesCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		8E4F66852525C82C0022FBFC /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		8E4F66932525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoordinatesCoreData+CoreDataClass.swift"; path = "Holo/CoordinatesCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		8E4F66942525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoordinatesCoreData+CoreDataProperties.swift"; path = "Holo/CoordinatesCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		8E4F66952525C9500022FBFC /* Route+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Route+CoreDataClass.swift"; path = "Holo/Route+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		8E4F66962525C9500022FBFC /* Route+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Route+CoreDataProperties.swift"; path = "Holo/Route+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		8E5078F4251B5DE700DABE76 /* Holo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5078F7251B5DE700DABE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				8E507905251B5DEB00DABE76 /* LaunchScreen.storyboard */,
 				8E507908251B5DEB00DABE76 /* Info.plist */,
 				8E507900251B5DE700DABE76 /* Holo.xcdatamodeld */,
+				8E4F66852525C82C0022FBFC /* DoubleExtension.swift */,
 			);
 			path = Holo;
 			sourceTree = "<group>";
@@ -93,10 +96,10 @@
 		8E616E912521E10B00C8001C /* Core Data Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8E4F667C25253A0C0022FBFC /* Route+CoreDataClass.swift */,
-				8E4F667D25253A0C0022FBFC /* Route+CoreDataProperties.swift */,
-				8E4F667E25253A0C0022FBFC /* CoordinatesCoreData+CoreDataClass.swift */,
-				8E4F667F25253A0C0022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */,
+				8E4F66932525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift */,
+				8E4F66942525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */,
+				8E4F66952525C9500022FBFC /* Route+CoreDataClass.swift */,
+				8E4F66962525C9500022FBFC /* Route+CoreDataProperties.swift */,
 			);
 			path = "Core Data Classes";
 			sourceTree = "<group>";
@@ -253,13 +256,14 @@
 				8E5078F8251B5DE700DABE76 /* AppDelegate.swift in Sources */,
 				8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */,
 				8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */,
-				8E4F668125253A0C0022FBFC /* Route+CoreDataProperties.swift in Sources */,
-				8E4F668025253A0C0022FBFC /* Route+CoreDataClass.swift in Sources */,
-				8E4F668225253A0C0022FBFC /* CoordinatesCoreData+CoreDataClass.swift in Sources */,
+				8E4F669A2525C9500022FBFC /* Route+CoreDataProperties.swift in Sources */,
+				8E4F66862525C82C0022FBFC /* DoubleExtension.swift in Sources */,
+				8E4F66972525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift in Sources */,
+				8E4F66982525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift in Sources */,
 				8E05D73D251B75F4004F6C3B /* MapViewController.swift in Sources */,
 				8EBD1F4D251F3EAC00C6B0BF /* PathesTableViewCell.swift in Sources */,
-				8E4F668325253A0C0022FBFC /* CoordinatesCoreData+CoreDataProperties.swift in Sources */,
 				8EBD1F48251F3DE700C6B0BF /* PathesViewController.swift in Sources */,
+				8E4F66992525C9500022FBFC /* Route+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

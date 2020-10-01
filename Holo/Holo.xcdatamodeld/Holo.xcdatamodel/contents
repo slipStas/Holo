@@ -10,7 +10,7 @@
     <entity name="Route" representedClassName="Route" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="routeLength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="coordinates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoordinatesCoreData" inverseName="route" inverseEntity="CoordinatesCoreData"/>
     </entity>
     <elements>
