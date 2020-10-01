@@ -133,13 +133,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="vij-50-XvT">
-                                <rect key="frame" x="32" y="344" width="350" height="208"/>
+                                <rect key="frame" x="16" y="302" width="382" height="292"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-eK-Ptn">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="212"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To sign in, please enter your login and password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="178-ZI-avc">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-2A-JAw">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
+                                                <rect key="frame" x="0.0" y="84" width="382" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="rrW-Cq-FVT"/>
                                                 </constraints>
@@ -147,7 +153,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqx-wE-hro">
-                                                <rect key="frame" x="0.0" y="84" width="350" height="44"/>
+                                                <rect key="frame" x="0.0" y="168" width="382" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="4Gc-JW-ohF"/>
                                                 </constraints>
@@ -155,15 +161,12 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="xHe-CK-9zy"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-yF-681">
-                                        <rect key="frame" x="0.0" y="178" width="350" height="30"/>
+                                        <rect key="frame" x="0.0" y="262" width="382" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-Ne-9b6">
-                                                <rect key="frame" x="0.0" y="0.0" width="153" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Sign in"/>
                                                 <connections>
@@ -171,7 +174,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGn-Wb-6XE">
-                                                <rect key="frame" x="197" y="0.0" width="153" height="30"/>
+                                                <rect key="frame" x="213" y="0.0" width="169" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Sing up"/>
                                                 <connections>
@@ -188,21 +191,25 @@
                         <constraints>
                             <constraint firstItem="vij-50-XvT" firstAttribute="centerY" secondItem="AtI-Px-9bG" secondAttribute="centerY" id="DGY-lz-j4c"/>
                             <constraint firstItem="vij-50-XvT" firstAttribute="centerX" secondItem="AtI-Px-9bG" secondAttribute="centerX" id="T6y-Up-sRC"/>
+                            <constraint firstItem="7jD-M7-GtG" firstAttribute="trailing" secondItem="vij-50-XvT" secondAttribute="trailing" constant="16" id="Xtk-Zi-nJq"/>
+                            <constraint firstItem="vij-50-XvT" firstAttribute="leading" secondItem="7jD-M7-GtG" secondAttribute="leading" constant="16" id="ZcC-mv-TgE"/>
+                            <constraint firstItem="vij-50-XvT" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7jD-M7-GtG" secondAttribute="top" constant="16" id="flA-dL-Xh3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginTextField" destination="EBR-2A-JAw" id="ZKT-65-35x"/>
                         <outlet property="passwordTextField" destination="Uqx-wE-hro" id="YmF-7P-cpY"/>
+                        <outlet property="systemInformationLabel" destination="178-ZI-avc" id="eGh-qs-bLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G6-Yp-l5r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="178" y="80"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="0tF-uH-kuV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Lm-4i-t98" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="4Lm-4i-t98" customClass="NavigationViewController" customModule="Holo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m0p-pK-YhK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -17,17 +17,16 @@ class PathesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        load()
+        loadRouts()
         pathesTableView.reloadData()
         
         pathesTableView.delegate = self
         pathesTableView.dataSource = self
     }
     
-    func load() {
+    func loadRouts() {
         do {
             self.routsArray = try context.fetch(Route.fetchRequest())
-            print(self.routsArray.count)
         } catch let error {
             print(error.localizedDescription)
         }

@@ -11,6 +11,7 @@
 		8E0ED1162525CE3400A80C17 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ED1142525CE3400A80C17 /* User+CoreDataClass.swift */; };
 		8E0ED1172525CE3400A80C17 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ED1152525CE3400A80C17 /* User+CoreDataProperties.swift */; };
 		8E0ED11A2525D3E900A80C17 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ED1192525D3E900A80C17 /* LoginViewController.swift */; };
+		8E0ED11D2525E31100A80C17 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0ED11C2525E31100A80C17 /* NavigationViewController.swift */; };
 		8E4F66862525C82C0022FBFC /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66852525C82C0022FBFC /* DoubleExtension.swift */; };
 		8E4F66972525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66932525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift */; };
 		8E4F66982525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4F66942525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */; };
@@ -33,6 +34,7 @@
 		8E0ED1142525CE3400A80C17 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		8E0ED1152525CE3400A80C17 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		8E0ED1192525D3E900A80C17 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8E0ED11C2525E31100A80C17 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8E4F66852525C82C0022FBFC /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		8E4F66932525C9500022FBFC /* CoordinatesCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoordinatesCoreData+CoreDataClass.swift"; path = "Holo/CoordinatesCoreData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		8E4F66942525C9500022FBFC /* CoordinatesCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoordinatesCoreData+CoreDataProperties.swift"; path = "Holo/CoordinatesCoreData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -118,6 +120,7 @@
 				8EBD1F4B251F3E8200C6B0BF /* Pathes View Controller */,
 				8E05D73C251B75F4004F6C3B /* MapViewController.swift */,
 				8E0ED1192525D3E900A80C17 /* LoginViewController.swift */,
+				8E0ED11C2525E31100A80C17 /* NavigationViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				8E0ED11A2525D3E900A80C17 /* LoginViewController.swift in Sources */,
 				8E5078F8251B5DE700DABE76 /* AppDelegate.swift in Sources */,
 				8E5078FA251B5DE700DABE76 /* SceneDelegate.swift in Sources */,
+				8E0ED11D2525E31100A80C17 /* NavigationViewController.swift in Sources */,
 				8E0ED1162525CE3400A80C17 /* User+CoreDataClass.swift in Sources */,
 				8E507902251B5DE700DABE76 /* Holo.xcdatamodeld in Sources */,
 				8E4F669A2525C9500022FBFC /* Route+CoreDataProperties.swift in Sources */,

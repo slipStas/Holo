@@ -15,7 +15,6 @@ class MapViewController: UIViewController {
     var coordinates: [CoordinatesCoreData]?
     var routeCoreData: Route?
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//    let fiveMinutes = 5 * 60
     var marker: GMSMarker?
     var manualMarker: GMSMarker?
     var locationManager: CLLocationManager?
