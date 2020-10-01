@@ -29,9 +29,11 @@ class MapViewController: UIViewController {
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
     var idCounter: Int64 = 0
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var showAllRoutesButton: UIBarButtonItem!
+    @IBOutlet weak var logOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,7 @@ class MapViewController: UIViewController {
         configureLocationManager()
         configureBackgroundTask()
         backgroundTimerCount = 0.0
+        setupLogOutButton()
     }
     
     @IBAction func trackingLocation(_ sender: UIBarButtonItem) {
@@ -132,6 +135,18 @@ class MapViewController: UIViewController {
         }
     }
 
+    @IBAction func logOut(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+        loginVC.modalPresentationStyle = .fullScreen
+        
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+//            self.present(loginVC, animated: true, completion: nil)
+        }
+        defaults.set(false, forKey: "isLogin")
+        print("go to LoginViewController")
+    }
     
     func configureMap() {
         
@@ -176,15 +191,6 @@ class MapViewController: UIViewController {
         
         backgroundTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
             self?.backgroundTimerCount += 1
-//            switch self?.backgroundTimerCount {
-//            case 0:
-//                self?.backgroundTimer?.invalidate()
-//                self?.backgroundTimer = nil
-//                UIApplication.shared.endBackgroundTask((self?.beginBackgroundTimerTask)!)
-//                self?.beginBackgroundTimerTask = UIBackgroundTaskIdentifier.invalid
-//            default:
-//                self?.backgroundTimerCount += 1
-//            }
         })
     }
     
@@ -193,6 +199,16 @@ class MapViewController: UIViewController {
         self.backgroundTimer = nil
         self.backgroundTimerCount = 0
         print("stop timer")
+    }
+    
+    func setupLogOutButton() {
+        logOutButton.frame = CGRect(x: 10, y: 100, width: 85, height: 44)
+
+        logOutButton.setTitle("Log out", for: .normal)
+        logOutButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        logOutButton.layer.cornerRadius = self.logOutButton.frame.height / 3
+        logOutButton.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.7)
+        logOutButton.layer.masksToBounds = true
     }
 }
 

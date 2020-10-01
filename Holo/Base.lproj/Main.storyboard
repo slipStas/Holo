@@ -20,6 +20,14 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQY-OY-GkA">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U52-lT-VSB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,13 +51,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="logOutButton" destination="VQY-OY-GkA" id="nVg-vh-24U"/>
                         <outlet property="mapView" destination="vO6-jI-Zkn" id="ZYU-XY-4lV"/>
                         <outlet property="showAllRoutesButton" destination="KZT-pe-8Ad" id="RZm-l3-Obc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="80"/>
+            <point key="canvasLocation" x="1786.9565217391305" y="79.6875"/>
         </scene>
         <!--Pathes View Controller-->
         <scene sceneID="lVh-Ab-GPe">
@@ -64,20 +73,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pathes" id="O76-LA-F00" customClass="PathesTableViewCell" customModule="Holo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="71.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O76-LA-F00" id="qED-9I-LkF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-3k-oQ8">
-                                                    <rect key="frame" x="8" y="8" width="52" height="27.5"/>
+                                                    <rect key="frame" x="8" y="8" width="52" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvS-zY-f0l">
-                                                    <rect key="frame" x="8" y="43.5" width="42" height="20"/>
+                                                    <rect key="frame" x="8" y="43" width="42" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="2pU-gm-uvJ"/>
                                                     </constraints>
@@ -127,7 +136,7 @@
         <!--Login View Controller-->
         <scene sceneID="b6j-c3-85O">
             <objects>
-                <viewController id="Njw-hf-4dE" customClass="LoginViewController" customModule="Holo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="Njw-hf-4dE" customClass="LoginViewController" customModule="Holo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AtI-Px-9bG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

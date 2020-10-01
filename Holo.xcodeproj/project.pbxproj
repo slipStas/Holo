@@ -66,6 +66,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0ED125252666D800A80C17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8E5078EB251B5DE700DABE76 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +94,7 @@
 		8E5078F6251B5DE700DABE76 /* Holo */ = {
 			isa = PBXGroup;
 			children = (
+				8E0ED125252666D800A80C17 /* Models */,
 				8E616E912521E10B00C8001C /* Core Data Classes */,
 				8E5078F7251B5DE700DABE76 /* AppDelegate.swift */,
 				8E5078F9251B5DE700DABE76 /* SceneDelegate.swift */,
