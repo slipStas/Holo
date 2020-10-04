@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         self.passwordTextField.delegate = self
-        
+        self.loginTextField.autocorrectionType = .no
         isUserAuthorised = defaults.bool(forKey: "isLogin")
         print(isUserAuthorised)
         
