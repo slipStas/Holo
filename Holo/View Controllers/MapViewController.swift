@@ -157,7 +157,6 @@ class MapViewController: UIViewController {
 
         mapView.camera = camera
         mapView.animate(toZoom: 16)
-//        mapView.isTrafficEnabled = true
         mapView.mapType = .normal
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
